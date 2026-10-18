@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:navigationIcon="@drawable/ic_back"
+        app:titleTextColor="?attr/colorOnPrimary" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingBottom="12dp">
+
+                <ImageView
+                    android:id="@+id/d_icon"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:contentDescription="@string/app_name" />
+
+                <ProgressBar
+                    android:id="@+id/d_progress"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="16dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+            <TextView style="@style/DetailLabel" android:text="Package" />
+            <TextView android:id="@+id/d_package" style="@style/DetailValue" />
+
+            <TextView style="@style/DetailLabel" android:text="Versi" />
+            <TextView android:id="@+id/d_version" style="@style/DetailValue" />
+
+            <TextView style="@style/DetailLabel" android:text="SDK" />
+            <TextView android:id="@+id/d_sdk" style="@style/DetailValue" />
+
+            <TextView style="@style/DetailLabel" android:text="Ukuran APK" />
+            <TextView android:id="@+id/d_size" style="@style/DetailValue" />
+
+            <TextView style="@style/DetailLabel" android:text="SHA-256" />
+            <TextView
+                android:id="@+id/d_sha"
+                style="@style/DetailValue"
+                android:textIsSelectable="true" />
+
+            <TextView style="@style/DetailLabel" android:text="Install / Update" />
+            <TextView android:id="@+id/d_installed" style="@style/DetailValue" />
+            <TextView android:id="@+id/d_updated" style="@style/DetailValue" />
+
+            <TextView style="@style/DetailLabel" android:text="Lokasi APK" />
+            <TextView
+                android:id="@+id/d_path"
+                style="@style/DetailValue"
+                android:textIsSelectable="true" />
+
+            <TextView style="@style/DetailLabel" android:text="Split APK" />
+            <TextView android:id="@+id/d_splits" style="@style/DetailValue" />
+
+            <TextView style="@style/DetailLabel" android:text="Permissions" />
+            <TextView android:id="@+id/d_perms" style="@style/DetailValue" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="16dp">
+
+                <Button
+                    android:id="@+id/btn_extract"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Extract" />
+
+                <Button
+                    android:id="@+id/btn_strings"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:text="Scan Strings" />
+
+                <Button
+                    android:id="@+id/btn_share"
+                    style="?attr/materialButtonOutlinedStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:text="Share" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/d_output"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_output"
+                android:padding="12dp"
+                android:layout_marginTop="12dp"
+                android:textColor="?attr/colorOnSurface"
+                android:textIsSelectable="true"
+                android:textSize="12sp"
+                android:typeface="monospace"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
